@@ -1,0 +1,67 @@
+[
+  {
+    "id_performanceData": 1,
+    "performanceScore": 15,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "id_adType": 1,
+      "descriptionType": "banner"
+    },
+    "adProvider": {
+      "id_adProvider": 1,
+      "descriptionProvider": "Facebook"
+    }
+  },
+  {
+    "id_performanceData": 2,
+    "performanceScore": 15,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "id_adType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "id_adProvider": 1,
+      "descriptionProvider": "Facebook"
+    }
+  },
+  {
+    "id_performanceData": 3,
+    "performanceScore": 22,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "id_adType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "id_adProvider": 1,
+      "descriptionProvider": "Facebook"
+    }
+
+  },
+  {
+    "id_performanceData": 4,
+    "performanceScore": 6,
+    "country": {
+      "countryCode": "DE",
+      "countryName": "Germany"
+    },
+    "adType": {
+      "id_adType": 1,
+      "descriptionType": "banner"
+    },
+    "adProvider": {
+      "id_adProvider": 2,
+      "descriptionProvider": "Google"
+    }
+  }
+]
