@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -11,9 +13,11 @@ import javax.persistence.*;
 public class AdType {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_adType;
     private String descriptionType;
+
+    @OneToMany
+    private List<PerformanceData> perfData = new ArrayList<>();
 
     public AdType() {
     }

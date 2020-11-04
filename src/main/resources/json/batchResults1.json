@@ -8,7 +8,7 @@
     },
     "adType": {
       "id_adType": 1,
-      "descriptionType": "banner"
+      "descriptionType": "Banner"
     },
     "adProvider": {
       "id_adProvider": 1,
@@ -50,14 +50,14 @@
   },
   {
     "id_performanceData": 4,
-    "performanceScore": 6,
+    "performanceScore": 66,
     "country": {
       "countryCode": "DE",
       "countryName": "Germany"
     },
     "adType": {
       "id_adType": 1,
-      "descriptionType": "banner"
+      "descriptionType": "Banner"
     },
     "adProvider": {
       "id_adProvider": 2,

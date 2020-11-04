@@ -26,7 +26,7 @@ public class AdMediationChallengeApplication {
             // read JSON and load json
             ObjectMapper mapper = new ObjectMapper();
             TypeReference<List<PerformanceData>> typeReference = new TypeReference<List<PerformanceData>>(){};
-            InputStream inputStream = TypeReference.class.getResourceAsStream("/json/batchResults2.json");
+            InputStream inputStream = TypeReference.class.getResourceAsStream("/json/batchResults1.json");
             try {
                 List<PerformanceData> updates = mapper.readValue(inputStream, typeReference);
                 updateService.save(updates);

@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -11,7 +13,6 @@ import javax.persistence.*;
 public class AdProvider {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_adProvider;
     private String descriptionProvider;
 
