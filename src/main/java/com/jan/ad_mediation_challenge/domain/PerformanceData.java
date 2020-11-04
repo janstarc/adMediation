@@ -18,13 +18,13 @@ public class PerformanceData {
     private Long id_performanceData;
     private int performanceScore;
 
-    @Embedded
+    @ManyToOne(fetch = FetchType.LAZY)
     private Country country;
 
-    @Embedded
+    @ManyToOne(fetch = FetchType.LAZY)
     private AdType adType;
 
-    @Embedded
+    @ManyToOne(fetch = FetchType.LAZY)
     private AdProvider adProvider;
 
     public PerformanceData() {
