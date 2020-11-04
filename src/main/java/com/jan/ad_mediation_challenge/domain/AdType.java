@@ -16,9 +16,6 @@ public class AdType {
     private int id_adType;
     private String descriptionType;
 
-    @OneToMany
-    private List<PerformanceData> perfData = new ArrayList<>();
-
     public AdType() {
     }
 }

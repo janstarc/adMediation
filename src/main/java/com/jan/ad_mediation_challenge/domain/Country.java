@@ -16,9 +16,6 @@ public class Country {
     private String countryCode;
     private String countryName;
 
-    @OneToMany
-    private List<PerformanceData> perfData = new ArrayList<>();
-
     public Country() {
     }
 }
