@@ -20,6 +20,7 @@ public class AdMediationChallengeApplication {
         SpringApplication.run(AdMediationChallengeApplication.class, args);
     }
 
+    /*
     @Bean
     CommandLineRunner runner(UpdateService updateService){
         return args -> {
@@ -36,5 +37,7 @@ public class AdMediationChallengeApplication {
             }
         };
     }
+
+     */
 
 }
