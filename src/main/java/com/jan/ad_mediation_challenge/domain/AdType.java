@@ -13,9 +13,17 @@ import java.util.List;
 public class AdType {
 
     @Id
-    private int id_adType;
+    private int idAdType;
     private String descriptionType;
 
     public AdType() {
+    }
+
+    public int getIdAdType() {
+        return idAdType;
+    }
+
+    public String getDescriptionType() {
+        return descriptionType;
     }
 }

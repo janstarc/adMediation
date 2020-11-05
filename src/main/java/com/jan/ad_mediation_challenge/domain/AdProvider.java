@@ -13,9 +13,17 @@ import java.util.List;
 public class AdProvider {
 
     @Id
-    private int id_adProvider;
+    private int idAdProvider;
     private String descriptionProvider;
 
     public AdProvider() {
+    }
+
+    public int getIdAdProvider() {
+        return idAdProvider;
+    }
+
+    public String getDescriptionProvider() {
+        return descriptionProvider;
     }
 }

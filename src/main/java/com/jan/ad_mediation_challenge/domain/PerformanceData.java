@@ -15,7 +15,8 @@ public class PerformanceData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id_performanceData;
+    //@Column(name = "idPerformanceData", nullable = false, updatable = false)
+    private Long idPerformanceData;
     private int performanceScore;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false, cascade = CascadeType.ALL)
@@ -28,5 +29,25 @@ public class PerformanceData {
     private AdProvider adProvider;
 
     public PerformanceData() {
+    }
+
+    public Long getIdPerformanceData() {
+        return idPerformanceData;
+    }
+
+    public int getPerformanceScore() {
+        return performanceScore;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public AdType getAdType() {
+        return adType;
+    }
+
+    public AdProvider getAdProvider() {
+        return adProvider;
     }
 }
