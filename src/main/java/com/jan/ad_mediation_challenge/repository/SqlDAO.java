@@ -9,4 +9,6 @@ public interface SqlDAO extends JpaRepository<PerformanceData, Long> {
 
     List<PerformanceData> findPerformanceDataByPerformanceScore(int performanceScore);
 
+    List<PerformanceData> findPerformanceDataByCountry_CountryCode(String countryCode);
+
 }
