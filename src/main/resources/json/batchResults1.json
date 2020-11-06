@@ -1,67 +1,973 @@
 [
   {
-    "id_performanceData": 1,
+    "idPerformanceData": 1,
     "performanceScore": 15,
     "country": {
       "countryCode": "SL",
       "countryName": "Slovenia"
     },
     "adType": {
-      "id_adType": 1,
+      "idAdType": 1,
       "descriptionType": "Banner"
     },
     "adProvider": {
-      "id_adProvider": 1,
+      "idAdProvider": 1,
       "descriptionProvider": "Facebook"
     }
   },
   {
-    "id_performanceData": 2,
+    "idPerformanceData": 2,
     "performanceScore": 15,
     "country": {
       "countryCode": "SL",
       "countryName": "Slovenia"
     },
     "adType": {
-      "id_adType": 2,
+      "idAdType": 2,
       "descriptionType": "interstitial"
     },
     "adProvider": {
-      "id_adProvider": 1,
+      "idAdProvider": 1,
       "descriptionProvider": "Facebook"
     }
   },
   {
-    "id_performanceData": 3,
+    "idPerformanceData": 3,
     "performanceScore": 22,
     "country": {
       "countryCode": "SL",
       "countryName": "Slovenia"
     },
     "adType": {
-      "id_adType": 3,
+      "idAdType": 3,
       "descriptionType": "rewardedVideo"
     },
     "adProvider": {
-      "id_adProvider": 1,
+      "idAdProvider": 1,
       "descriptionProvider": "Facebook"
     }
 
   },
   {
-    "id_performanceData": 4,
-    "performanceScore": 66,
+    "idPerformanceData": 4,
+    "performanceScore": 22,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "idAdType": 1,
+      "descriptionType": "Banner"
+    },
+    "adProvider": {
+      "idAdProvider": 2,
+      "descriptionProvider": "Adx"
+    }
+  },
+  {
+    "idPerformanceData": 5,
+    "performanceScore": 65,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 2,
+      "descriptionProvider": "Adx"
+    }
+  },
+  {
+    "idPerformanceData": 6,
+    "performanceScore": 88,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 2,
+      "descriptionProvider": "Adx"
+    }
+  },
+  {
+    "idPerformanceData": 7,
+    "performanceScore": 46,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "idAdType": 1,
+      "descriptionType": "Banner"
+    },
+    "adProvider": {
+      "idAdProvider": 3,
+      "descriptionProvider": "UnityAds"
+    }
+  },
+  {
+    "idPerformanceData": 8,
+    "performanceScore": 14,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 3,
+      "descriptionProvider": "UnityAds"
+    }
+  },
+  {
+    "idPerformanceData": 9,
+    "performanceScore": 52,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 3,
+      "descriptionProvider": "UnityAds"
+    }
+
+  }, {
+  "idPerformanceData": 10,
+  "performanceScore": 34,
+  "country": {
+    "countryCode": "SL",
+    "countryName": "Slovenia"
+  },
+  "adType": {
+    "idAdType": 1,
+    "descriptionType": "Banner"
+  },
+  "adProvider": {
+    "idAdProvider": 4,
+    "descriptionProvider": "AdMob"
+  }
+},
+  {
+    "idPerformanceData": 11,
+    "performanceScore": 47,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 4,
+      "descriptionProvider": "AdMob"
+    }
+  },
+  {
+    "idPerformanceData": 12,
+    "performanceScore": 93,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 4,
+      "descriptionProvider": "AdMob"
+    }
+
+  },
+  {
+    "idPerformanceData": 13,
+    "performanceScore": 74,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "idAdType": 1,
+      "descriptionType": "Banner"
+    },
+    "adProvider": {
+      "idAdProvider": 5,
+      "descriptionProvider": "AdMob-OptOut"
+    }
+  },
+  {
+    "idPerformanceData": 14,
+    "performanceScore": 34,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 5,
+      "descriptionProvider": "AdMob-OptOut"
+    }
+  },
+  {
+    "idPerformanceData": 15,
+    "performanceScore": 37,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 5,
+      "descriptionProvider": "AdMob-OptOut"
+    }
+
+  },
+  {
+    "idPerformanceData": 16,
+    "performanceScore": 83,
+    "country": {
+      "countryCode": "US",
+      "countryName": "United States"
+    },
+    "adType": {
+      "idAdType": 1,
+      "descriptionType": "Banner"
+    },
+    "adProvider": {
+      "idAdProvider": 1,
+      "descriptionProvider": "Facebook"
+    }
+  },
+  {
+    "idPerformanceData": 17,
+    "performanceScore": 34,
+    "country": {
+      "countryCode": "US",
+      "countryName": "United States"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 1,
+      "descriptionProvider": "Facebook"
+    }
+  },
+  {
+    "idPerformanceData": 18,
+    "performanceScore": 69,
+    "country": {
+      "countryCode": "US",
+      "countryName": "United States"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 1,
+      "descriptionProvider": "Facebook"
+    }
+
+  },
+  {
+    "idPerformanceData": 19,
+    "performanceScore": 58,
+    "country": {
+      "countryCode": "US",
+      "countryName": "United States"
+    },
+    "adType": {
+      "idAdType": 1,
+      "descriptionType": "Banner"
+    },
+    "adProvider": {
+      "idAdProvider": 2,
+      "descriptionProvider": "Adx"
+    }
+  },
+  {
+    "idPerformanceData": 20,
+    "performanceScore": 86,
+    "country": {
+      "countryCode": "US",
+      "countryName": "United States"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 2,
+      "descriptionProvider": "Adx"
+    }
+  },
+  {
+    "idPerformanceData": 21,
+    "performanceScore": 41,
+    "country": {
+      "countryCode": "US",
+      "countryName": "United States"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 2,
+      "descriptionProvider": "Adx"
+    }
+  },
+  {
+    "idPerformanceData": 22,
+    "performanceScore": 31,
+    "country": {
+      "countryCode": "US",
+      "countryName": "United States"
+    },
+    "adType": {
+      "idAdType": 1,
+      "descriptionType": "Banner"
+    },
+    "adProvider": {
+      "idAdProvider": 3,
+      "descriptionProvider": "UnityAds"
+    }
+  },
+  {
+    "idPerformanceData": 23,
+    "performanceScore": 14,
+    "country": {
+      "countryCode": "US",
+      "countryName": "United States"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 3,
+      "descriptionProvider": "UnityAds"
+    }
+  },
+  {
+    "idPerformanceData": 24,
+    "performanceScore": 2,
+    "country": {
+      "countryCode": "US",
+      "countryName": "United States"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 3,
+      "descriptionProvider": "UnityAds"
+    }
+
+  }, {
+  "idPerformanceData": 25,
+  "performanceScore": 7,
+  "country": {
+    "countryCode": "US",
+    "countryName": "United States"
+  },
+  "adType": {
+    "idAdType": 1,
+    "descriptionType": "Banner"
+  },
+  "adProvider": {
+    "idAdProvider": 4,
+    "descriptionProvider": "AdMob"
+  }
+},
+  {
+    "idPerformanceData": 26,
+    "performanceScore": 58,
+    "country": {
+      "countryCode": "US",
+      "countryName": "United States"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 4,
+      "descriptionProvider": "AdMob"
+    }
+  },
+  {
+    "idPerformanceData": 27,
+    "performanceScore": 23,
+    "country": {
+      "countryCode": "US",
+      "countryName": "United States"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 4,
+      "descriptionProvider": "AdMob"
+    }
+
+  },
+  {
+    "idPerformanceData": 28,
+    "performanceScore": 7,
+    "country": {
+      "countryCode": "US",
+      "countryName": "United States"
+    },
+    "adType": {
+      "idAdType": 1,
+      "descriptionType": "Banner"
+    },
+    "adProvider": {
+      "idAdProvider": 5,
+      "descriptionProvider": "AdMob-OptOut"
+    }
+  },
+  {
+    "idPerformanceData": 29,
+    "performanceScore": 12,
+    "country": {
+      "countryCode": "US",
+      "countryName": "United States"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 5,
+      "descriptionProvider": "AdMob-OptOut"
+    }
+  },
+  {
+    "idPerformanceData": 30,
+    "performanceScore": 1,
+    "country": {
+      "countryCode": "US",
+      "countryName": "United States"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 5,
+      "descriptionProvider": "AdMob-OptOut"
+    }
+  },
+  {
+    "idPerformanceData": 31,
+    "performanceScore": 2,
     "country": {
       "countryCode": "DE",
       "countryName": "Germany"
     },
     "adType": {
-      "id_adType": 1,
+      "idAdType": 1,
       "descriptionType": "Banner"
     },
     "adProvider": {
-      "id_adProvider": 2,
-      "descriptionProvider": "Google"
+      "idAdProvider": 1,
+      "descriptionProvider": "Facebook"
     }
+  },
+  {
+    "idPerformanceData": 32,
+    "performanceScore": 19,
+    "country": {
+      "countryCode": "DE",
+      "countryName": "Germany"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 1,
+      "descriptionProvider": "Facebook"
+    }
+  },
+  {
+    "idPerformanceData": 33,
+    "performanceScore": 73,
+    "country": {
+      "countryCode": "DE",
+      "countryName": "Germany"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 1,
+      "descriptionProvider": "Facebook"
+    }
+
+  },
+  {
+    "idPerformanceData": 34,
+    "performanceScore": 77,
+    "country": {
+      "countryCode": "DE",
+      "countryName": "Germany"
+    },
+    "adType": {
+      "idAdType": 1,
+      "descriptionType": "Banner"
+    },
+    "adProvider": {
+      "idAdProvider": 2,
+      "descriptionProvider": "Adx"
+    }
+  },
+  {
+    "idPerformanceData": 35,
+    "performanceScore": 37,
+    "country": {
+      "countryCode": "DE",
+      "countryName": "Germany"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 2,
+      "descriptionProvider": "Adx"
+    }
+  },
+  {
+    "idPerformanceData": 36,
+    "performanceScore": 22,
+    "country": {
+      "countryCode": "DE",
+      "countryName": "Germany"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 2,
+      "descriptionProvider": "Adx"
+    }
+  },
+  {
+    "idPerformanceData": 37,
+    "performanceScore": 74,
+    "country": {
+      "countryCode": "DE",
+      "countryName": "Germany"
+    },
+    "adType": {
+      "idAdType": 1,
+      "descriptionType": "Banner"
+    },
+    "adProvider": {
+      "idAdProvider": 3,
+      "descriptionProvider": "UnityAds"
+    }
+  },
+  {
+    "idPerformanceData": 38,
+    "performanceScore": 34,
+    "country": {
+      "countryCode": "DE",
+      "countryName": "Germany"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 3,
+      "descriptionProvider": "UnityAds"
+    }
+  },
+  {
+    "idPerformanceData": 39,
+    "performanceScore": 82,
+    "country": {
+      "countryCode": "DE",
+      "countryName": "Germany"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 3,
+      "descriptionProvider": "UnityAds"
+    }
+
+  }, {
+  "idPerformanceData": 40,
+  "performanceScore": 95,
+  "country": {
+    "countryCode": "DE",
+    "countryName": "Germany"
+  },
+  "adType": {
+    "idAdType": 1,
+    "descriptionType": "Banner"
+  },
+  "adProvider": {
+    "idAdProvider": 4,
+    "descriptionProvider": "AdMob"
+  }
+},
+  {
+    "idPerformanceData": 41,
+    "performanceScore": 27,
+    "country": {
+      "countryCode": "DE",
+      "countryName": "Germany"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 4,
+      "descriptionProvider": "AdMob"
+    }
+  },
+  {
+    "idPerformanceData": 42,
+    "performanceScore": 31,
+    "country": {
+      "countryCode": "DE",
+      "countryName": "Germany"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 4,
+      "descriptionProvider": "AdMob"
+    }
+
+  },
+  {
+    "idPerformanceData": 43,
+    "performanceScore": 88,
+    "country": {
+      "countryCode": "DE",
+      "countryName": "Germany"
+    },
+    "adType": {
+      "idAdType": 1,
+      "descriptionType": "Banner"
+    },
+    "adProvider": {
+      "idAdProvider": 5,
+      "descriptionProvider": "AdMob-OptOut"
+    }
+  },
+  {
+    "idPerformanceData": 44,
+    "performanceScore": 12,
+    "country": {
+      "countryCode": "DE",
+      "countryName": "Germany"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 5,
+      "descriptionProvider": "AdMob-OptOut"
+    }
+  },
+  {
+    "idPerformanceData": 45,
+    "performanceScore": 56,
+    "country": {
+      "countryCode": "DE",
+      "countryName": "Germany"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 5,
+      "descriptionProvider": "AdMob-OptOut"
+    }
+
+  },
+  {
+  "idPerformanceData": 46,
+  "performanceScore": 15,
+  "country": {
+    "countryCode": "CN",
+    "countryName": "China"
+  },
+  "adType": {
+    "idAdType": 1,
+    "descriptionType": "Banner"
+  },
+  "adProvider": {
+    "idAdProvider": 1,
+    "descriptionProvider": "Facebook"
+  }
+},
+  {
+    "idPerformanceData": 47,
+    "performanceScore": 99,
+    "country": {
+      "countryCode": "CN",
+      "countryName": "China"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 1,
+      "descriptionProvider": "Facebook"
+    }
+  },
+  {
+    "idPerformanceData": 48,
+    "performanceScore": 3,
+    "country": {
+      "countryCode": "CN",
+      "countryName": "China"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 1,
+      "descriptionProvider": "Facebook"
+    }
+
+  },
+  {
+    "idPerformanceData": 49,
+    "performanceScore": 49,
+    "country": {
+      "countryCode": "CN",
+      "countryName": "China"
+    },
+    "adType": {
+      "idAdType": 1,
+      "descriptionType": "Banner"
+    },
+    "adProvider": {
+      "idAdProvider": 2,
+      "descriptionProvider": "Adx"
+    }
+  },
+  {
+    "idPerformanceData": 50,
+    "performanceScore": 34,
+    "country": {
+      "countryCode": "CN",
+      "countryName": "China"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 2,
+      "descriptionProvider": "Adx"
+    }
+  },
+  {
+    "idPerformanceData": 51,
+    "performanceScore": 22,
+    "country": {
+      "countryCode": "CN",
+      "countryName": "China"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 2,
+      "descriptionProvider": "Adx"
+    }
+  },
+  {
+    "idPerformanceData": 52,
+    "performanceScore": 44,
+    "country": {
+      "countryCode": "CN",
+      "countryName": "China"
+    },
+    "adType": {
+      "idAdType": 1,
+      "descriptionType": "Banner"
+    },
+    "adProvider": {
+      "idAdProvider": 3,
+      "descriptionProvider": "UnityAds"
+    }
+  },
+  {
+    "idPerformanceData": 53,
+    "performanceScore": 74,
+    "country": {
+      "countryCode": "CN",
+      "countryName": "China"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 3,
+      "descriptionProvider": "UnityAds"
+    }
+  },
+  {
+    "idPerformanceData": 54,
+    "performanceScore": 36,
+    "country": {
+      "countryCode": "CN",
+      "countryName": "China"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 3,
+      "descriptionProvider": "UnityAds"
+    }
+
+  }, {
+  "idPerformanceData": 55,
+  "performanceScore": 57,
+  "country": {
+    "countryCode": "CN",
+    "countryName": "China"
+  },
+  "adType": {
+    "idAdType": 1,
+    "descriptionType": "Banner"
+  },
+  "adProvider": {
+    "idAdProvider": 4,
+    "descriptionProvider": "AdMob"
+  }
+},
+  {
+    "idPerformanceData": 56,
+    "performanceScore": 12,
+    "country": {
+      "countryCode": "CN",
+      "countryName": "China"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 4,
+      "descriptionProvider": "AdMob"
+    }
+  },
+  {
+    "idPerformanceData": 57,
+    "performanceScore": 28,
+    "country": {
+      "countryCode": "CN",
+      "countryName": "China"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 4,
+      "descriptionProvider": "AdMob"
+    }
+
+  },
+  {
+    "idPerformanceData": 58,
+    "performanceScore": 34,
+    "country": {
+      "countryCode": "CN",
+      "countryName": "China"
+    },
+    "adType": {
+      "idAdType": 1,
+      "descriptionType": "Banner"
+    },
+    "adProvider": {
+      "idAdProvider": 5,
+      "descriptionProvider": "AdMob-OptOut"
+    }
+  },
+  {
+    "idPerformanceData": 59,
+    "performanceScore": 47,
+    "country": {
+      "countryCode": "CN",
+      "countryName": "China"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 5,
+      "descriptionProvider": "AdMob-OptOut"
+    }
+  },
+  {
+    "idPerformanceData": 60,
+    "performanceScore": 17,
+    "country": {
+      "countryCode": "CN",
+      "countryName": "China"
+    },
+    "adType": {
+      "idAdType": 3,
+      "descriptionType": "rewardedVideo"
+    },
+    "adProvider": {
+      "idAdProvider": 5,
+      "descriptionProvider": "AdMob-OptOut"
+    }
+
   }
 ]
