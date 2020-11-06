@@ -87,6 +87,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+
+        <!-- Dynamic Query -->
+        <dependency>
+            <groupId>com.github.joutvhu</groupId>
+            <artifactId>spring-dynamic-jpa</artifactId>
+            <version>2.3.3</version>
+        </dependency>
     </dependencies>
 
     <build>

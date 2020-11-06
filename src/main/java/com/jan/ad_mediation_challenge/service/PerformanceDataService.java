@@ -32,13 +32,24 @@ public class PerformanceDataService {
     // TODO
     Logger logger = LoggerFactory.getLogger(UpdateService.class);
 
-    public List<PerformanceData> getPerformanceData(String platform, String osVersion, String appName, String appVersion, String countryCode) {
+    public List<PerformanceData> getPerformanceData(String platform, String osVersion, String appName, String appVersion, String countryCode, int testNum) {
         logger.info("################# " + countryCode);
-        return sqlDAO.findPerformanceDataByCountry_CountryCode(countryCode);
+        return sqlDAO.findByPerformanceScore(testNum);
     }
 
-    public List<PerformanceDataSubset> getPerformanceDataSubset(String platform, String osVersion, String appName, String appVersion, String countryCode) {
-        logger.info("################# " + countryCode);
-        return sqlDAO.findByCountry_CountryCodeOrderByAdTypeAscPerformanceScoreDesc(countryCode);
+    public List<PerformanceDataSubset> getPerformanceDataSubset(String platform, String osVersion, String appName, String appVersion, String countryCode, int testNum) {
+
+        if (platform.equals("Android") && osVersion.charAt(0) == '9'){
+            // Results without AdMob
+            return sqlDAO.findByCountry_CountryCodeNoAdmob(countryCode);
+        } else if (countryCode.equals("CN")){
+            // Results without FB
+            return sqlDAO.findByCountry_CountryCodeNoFacebook(countryCode);
+        }
+        // TODO Can query be a variable?
+
+        return sqlDAO.findByCountry_CountryCode(countryCode);
     }
+
+
 }

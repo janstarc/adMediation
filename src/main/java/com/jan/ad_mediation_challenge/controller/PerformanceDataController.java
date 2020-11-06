@@ -26,9 +26,10 @@ public class PerformanceDataController {
                                                     @RequestParam(value = "osVersion") String osVersion,
                                                     @RequestParam(value = "appName") String appName,
                                                     @RequestParam(value = "appVersion") String appVersion,
-                                                    @RequestParam(value = "countryCode") String countryCode){
+                                                    @RequestParam(value = "countryCode") String countryCode,
+                                                    @RequestParam(value = "testNum") int testNum){
 
-        return performanceDataService.getPerformanceData(platform, osVersion, appName, appVersion, countryCode);
+        return performanceDataService.getPerformanceData(platform, osVersion, appName, appVersion, countryCode, testNum);
         //return "Data sent = " + platform + osVersion + appName + appVersion + countryCode;
     }
 
@@ -37,10 +38,10 @@ public class PerformanceDataController {
                                                                      @RequestParam(value = "osVersion") String osVersion,
                                                                      @RequestParam(value = "appName") String appName,
                                                                      @RequestParam(value = "appVersion") String appVersion,
-                                                                     @RequestParam(value = "countryCode") String countryCode){
+                                                                     @RequestParam(value = "countryCode") String countryCode,
+                                                                     @RequestParam(value = "testNum") int testNum){
 
-        return performanceDataService.getPerformanceDataSubset(platform, osVersion, appName, appVersion, countryCode);
-        //return "Data sent = " + platform + osVersion + appName + appVersion + countryCode;
+         return performanceDataService.getPerformanceDataSubset(platform, osVersion, appName, appVersion, countryCode, testNum);
     }
 
 
