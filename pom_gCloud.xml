@@ -16,16 +16,59 @@
 
     <properties>
         <java.version>11</java.version>
+        <spring.cloud-version>Hoxton.SR8</spring.cloud-version>
     </properties>
 
+    <!-- Add Spring Cloud GCP Dependency BOM -->
+    <!--
+    <dependencyManagement>
+        <dependencies>
+          <dependency>
+          <groupId>org.springframework.cloud</groupId>
+          <artifactId>spring-cloud-gcp-dependencies</artifactId>
+          <version>1.0.0.RC1</version>
+          <type>pom</type>
+          <scope>import</scope>
+          </dependency>
+      </dependencies>
+    </dependencyManagement>
+    -->
+    <!-- FROM SPRING BOOT WEBSITE below -->
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud-version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
+
+        <!-- Add CloudSQL Starter for MySQL -->
+        <!--
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-gcp-starter-sql-mysql</artifactId>
+            <version>1.0.0.M2</version>
+        </dependency>
+        -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-gcp-starter-sql-mysql -->
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-gcp-starter-sql-mysql</artifactId>
+            <version>1.2.5.RELEASE</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -83,16 +126,24 @@
             <artifactId>hibernate-validator</artifactId>
             <version>6.0.13.Final</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
+
+
+        <!-- Dynamic Query -->
         <dependency>
             <groupId>com.github.joutvhu</groupId>
             <artifactId>spring-dynamic-jpa</artifactId>
             <version>2.3.3</version>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <!-- Use Spring Milestone Repository -->
+        <repository>
+            <id>repository.spring.milestone</id>
+            <name>Spring Milestones Repository</name>
+            <url>http://repo.spring.io/milestone</url>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>
