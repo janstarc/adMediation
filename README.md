@@ -4,9 +4,9 @@
 ### 1.1 Local build
 1. Clone this repository
 1. Create an empty table in your MySQL database
-1. Open the `AdMediation/src/main/resources/application.yml` file and correctly set `url`, `username` and `password`
+1. Open the **AdMediation/src/main/resources/application.yml** file and correctly set **url**, **username** and **password** parameters
 1. Run `mvn package` in the project root folder
-1. Move to `AdMediation/target` folder
+1. Move to **AdMediation/target** folder
 1. Run `java -jar ad_mediation_challenge-0.0.1-SNAPSHOT.jar`
 
 ### 1.2 Deploy to Google Cloud
