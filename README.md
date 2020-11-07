@@ -1,15 +1,15 @@
 # Ad Mediation API
 
 ## 1. Build
-### 1.1 Local build
+### Option 1: Local build
 1. Clone this repository
 1. Create an empty table in your MySQL database
 1. Open the **AdMediation/src/main/resources/application.yml** file and correctly set **url**, **username** and **password** parameters
 1. Run `mvn package` in the project root folder
 1. Move to **AdMediation/target** folder
 1. Run `java -jar ad_mediation_challenge-0.0.1-SNAPSHOT.jar`
-
-### 1.2 Deploy to Google Cloud
+----
+### Option 2: Deploy to Google Cloud
 #### 1.2.1 Build and test
 1. Create a new project and activate console
 1. Create a new instance `gcloud sql instances create my-instance --availability-type regional --region europe-west3 --enable-bin-log --backup-start-time=03:00`
