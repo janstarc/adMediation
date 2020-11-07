@@ -20,24 +20,6 @@ public class AdMediationChallengeApplication {
         SpringApplication.run(AdMediationChallengeApplication.class, args);
     }
 
-    /*
-    @Bean
-    CommandLineRunner runner(UpdateService updateService){
-        return args -> {
-            // read JSON and load json
-            ObjectMapper mapper = new ObjectMapper();
-            TypeReference<List<PerformanceData>> typeReference = new TypeReference<List<PerformanceData>>(){};
-            InputStream inputStream = TypeReference.class.getResourceAsStream("/json/batchResults1.json");
-            try {
-                List<PerformanceData> updates = mapper.readValue(inputStream, typeReference);
-                updateService.save(updates);
-                System.out.println("Data Saved!");
-            } catch (IOException e){
-                System.out.println("Unable to save users: " + e.getMessage());
-            }
-        };
-    }
 
-     */
 
 }
