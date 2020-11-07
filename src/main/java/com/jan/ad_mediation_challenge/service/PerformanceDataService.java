@@ -34,7 +34,7 @@ public class PerformanceDataService {
 
     public List<PerformanceData> getPerformanceData(String platform, String osVersion, String appName, String appVersion, String countryCode, int testNum) {
         logger.info("################# " + countryCode);
-        return sqlDAO.findByPerformanceScore(testNum);
+        return sqlDAO.findPerformanceDataByPerformanceScoreAndCountry_CountryCode(testNum, countryCode);
     }
 
     public List<PerformanceDataSubset> getPerformanceDataSubset(String platform, String osVersion, String appName, String appVersion, String countryCode, int testNum) {
