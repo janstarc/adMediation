@@ -14,7 +14,7 @@ public interface SqlDAO extends JpaRepository<PerformanceData, Long> {
 
 
     // TODO NOTE! When working with dynamic queries the number of parameters in the JPA query method name isn't irrelevant!
-    /*
+
     @DynamicQuery(
             value = "select p from PerformanceData p where p.performanceScore > :performanceScore \n" +
                     "<#if countryCode?has_content> \n" +
@@ -22,7 +22,7 @@ public interface SqlDAO extends JpaRepository<PerformanceData, Long> {
                     "</#if>"
     )
     List<PerformanceData> findPerformanceDataByPerformanceScoreAndCountry_CountryCode(int performanceScore, String countryCode);
-    */
+
     //List<PerformanceData> findPerformanceDataByPerformanceScoreAndCountry_CountryCode(int performanceScore, String countryCode);
 
     /*
