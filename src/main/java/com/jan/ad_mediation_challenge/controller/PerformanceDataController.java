@@ -29,19 +29,19 @@ public class PerformanceDataController {
                                                     @RequestParam(value = "countryCode") String countryCode,
                                                     @RequestParam(value = "testNum") int testNum){
 
-        return performanceDataService.getPerformanceData(platform, osVersion, appName, appVersion, countryCode, testNum);
+        return performanceDataService.getTest(platform, osVersion, appName, appVersion, countryCode, testNum);
         //return "Data sent = " + platform + osVersion + appName + appVersion + countryCode;
     }
 
     @GetMapping("/subset")
-    public List<PerformanceDataSubset> getPerformanceDataSubset(@RequestParam(value = "platform") String platform,
+    public List<PerformanceData> getPerformanceDataSubset(@RequestParam(value = "platform") String platform,
                                                                      @RequestParam(value = "osVersion") String osVersion,
                                                                      @RequestParam(value = "appName") String appName,
                                                                      @RequestParam(value = "appVersion") String appVersion,
-                                                                     @RequestParam(value = "countryCode") String countryCode,
-                                                                     @RequestParam(value = "testNum") int testNum){
+                                                                     @RequestParam(value = "countryCode") String countryCode
+                                                                     ){
 
-         return performanceDataService.getPerformanceDataSubset(platform, osVersion, appName, appVersion, countryCode, testNum);
+         return performanceDataService.getTestSubset(platform, osVersion, appName, appVersion, countryCode);
     }
 
 

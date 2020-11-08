@@ -11,6 +11,7 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @Entity
+@Table
 public class PerformanceData {
 
     @Id

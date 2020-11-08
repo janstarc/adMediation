@@ -10,6 +10,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @Entity
+@Table
 public class Country {
 
     @Id

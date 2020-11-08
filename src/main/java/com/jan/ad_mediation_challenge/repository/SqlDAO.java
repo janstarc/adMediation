@@ -7,9 +7,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+import javax.persistence.Entity;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import java.util.Arrays;
 import java.util.List;
 
 //@EnableJpaRepositories(repositoryFactoryBeanClass = DynamicJpaRepositoryFactoryBean.class)
+
 public interface SqlDAO extends JpaRepository<PerformanceData, Long> {
 
 
@@ -67,11 +72,12 @@ public interface SqlDAO extends JpaRepository<PerformanceData, Long> {
     )
     List<PerformanceDataSubset> findNoFacebookNoAdMobByCountry_CountryCode(String countryCode);
 
+    /*
     String test = "test";
     @Query(
             value = test
     )
     List<PerformanceDataSubset> findTestByCountry_CountryCodeNoFacebook(String countryCode);
-
+    */
 
 }

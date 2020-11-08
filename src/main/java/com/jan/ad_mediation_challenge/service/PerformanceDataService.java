@@ -1,26 +1,35 @@
 package com.jan.ad_mediation_challenge.service;
 
 import com.jan.ad_mediation_challenge.domain.PerformanceData;
+import com.jan.ad_mediation_challenge.repository.PerformanceDataDao;
+import com.jan.ad_mediation_challenge.repository.PerformanceDataImpl;
 import com.jan.ad_mediation_challenge.repository.PerformanceDataSubset;
 import com.jan.ad_mediation_challenge.repository.SqlDAO;
+import com.querydsl.jpa.impl.JPAQuery;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Service
 public class PerformanceDataService {
 
     private SqlDAO sqlDAO;
+    private PerformanceDataDao performanceDataDao;
     //private PerformanceDataSubset performanceDataSubset;
 
 
     @Autowired
-    public PerformanceDataService(SqlDAO sqlDAO){
+    public PerformanceDataService(SqlDAO sqlDAO, PerformanceDataDao performanceDataDao){
         this.sqlDAO = sqlDAO;
+        this.performanceDataDao = performanceDataDao;
     }
+
+
 
     /*
     @Autowired
@@ -52,6 +61,16 @@ public class PerformanceDataService {
         }
 
 
+    }
+
+    public List<PerformanceData> getTest(String platform, String osVersion, String appName, String appVersion, String countryCode, int testNum) {
+
+        return performanceDataDao.findPerformanceDataByPerformanceScoreQueryDSL(testNum);
+    }
+
+    public List<PerformanceData> getTestSubset(String platform, String osVersion, String appName, String appVersion, String countryCode) {
+
+        return performanceDataDao.findSubset(platform, osVersion, appName, appVersion, countryCode);
     }
 
 
