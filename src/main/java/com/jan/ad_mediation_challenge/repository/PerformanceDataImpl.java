@@ -2,9 +2,6 @@ package com.jan.ad_mediation_challenge.repository;
 
 
 import com.jan.ad_mediation_challenge.domain.*;
-import com.jan.ad_mediation_challenge.domain.QAdProvider;
-import com.jan.ad_mediation_challenge.domain.QAdType;
-import com.jan.ad_mediation_challenge.domain.QCountry;
 import com.jan.ad_mediation_challenge.domain.QPerformanceData;
 import com.querydsl.core.group.GroupBy;
 import com.querydsl.jpa.impl.JPAQuery;
@@ -38,37 +35,45 @@ public class PerformanceDataImpl implements PerformanceDataDao {
         return query.from(performanceData).where(performanceData.performanceScore.eq(perfScore)).fetch();
     }
 
+    public boolean isAdMobPresent(String countryCode){
+        final JPAQuery<PerformanceData> queryCount = new JPAQuery<>(em);
+        final QPerformanceData performanceData = QPerformanceData.performanceData;
+
+        queryCount.from(performanceData).where(performanceData.country.countryCode.equalsIgnoreCase(countryCode));
+        queryCount.where(performanceData.adProvider.descriptionProvider.equalsIgnoreCase("AdMob"));
+        long numOfAdMob = queryCount.fetchCount();
+        //System.out.println("Num of AdMob " + numOfAdMob);
+
+        return numOfAdMob > 0;
+    }
+
     @Override
     public List<PerformanceData> findSubset(String platform, String osVersion, String appName, String appVersion, String countryCode){
+
+
         final JPAQuery<PerformanceData> query = new JPAQuery<>(em);
         final QPerformanceData performanceData = QPerformanceData.performanceData;
-        //final QAdProvider adProvider = QAdProvider.adProvider;
-        //final QAdType adType = QAdType.adType;
-        //final QCountry country = QCountry.country;
-
-        /*
-        if (platform.equals("Android") && osVersion.charAt(0) == '9' && countryCode.equals("CN")){
-            // Results without AdMob
-            return sqlDAO.findNoFacebookNoAdMobByCountry_CountryCode(countryCode);
-        } else if (countryCode.equals("CN")){
-            // Results without FB
-            return sqlDAO.findNoFacebookByCountry_CountryCode(countryCode);
-        } else if (platform.equals("Android") && osVersion.charAt(0) == '9'){
-            return sqlDAO.findNoAdmobByCountry_CountryCode(countryCode);
-        } else {
-            return sqlDAO.findByCountry_CountryCode(countryCode);
-        }
-
-         */
-
 
         query.from(performanceData);
         query.where(performanceData.country.countryCode.equalsIgnoreCase(countryCode));
         if(platform.equals("Android") && osVersion.charAt(0) == '9'){
-            query.where(performanceData.adProvider.descriptionProvider.notEqualsIgnoreCase("AdMob"));
+            query.where(performanceData.adProvider.descriptionProvider.notEqualsIgnoreCase("AdMob").and(performanceData.adProvider.descriptionProvider.notEqualsIgnoreCase("AdMob-OptOut")));
+        }
+        if(countryCode.equals("CN")){
+            query.where(performanceData.adProvider.descriptionProvider.notEqualsIgnoreCase("Facebook"));
+        }
+        if(isAdMobPresent(countryCode)){
+            query.where(performanceData.adProvider.descriptionProvider.notEqualsIgnoreCase("AdMob-OptOut"));
         }
 
+        query.orderBy(performanceData.adType.idAdType.asc());
+        query.orderBy(performanceData.performanceScore.desc());
 
+        //List<Object[]> rows = query.list(performanceData.performanceScore, performanceData.adType.idAdType, performanceData.adProvider.descriptionProvider);
+
+
+
+        //return query.fetch();
         return query.fetch();
     }
 
