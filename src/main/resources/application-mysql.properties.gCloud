@@ -1,0 +1,8 @@
+database=mysql
+spring.cloud.gcp.sql.database-name=adMed
+
+# CHANGE CONNECTION NAME HERE!
+spring.cloud.gcp.sql.instance-connection-name=<CONNECTION_NAME>
+
+spring.datasource.initialization-mode=always
+spring.jpa.hibernate.ddl-auto=update
