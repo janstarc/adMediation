@@ -8,15 +8,15 @@
 1. Run `mvn package` in the project root folder
 1. Move to **AdMediation/target** folder
 1. Run `java -jar ad_mediation_challenge-0.0.1-SNAPSHOT.jar`
-----
+---
 ### Option 2: Deploy to Google Cloud
 #### 1.2.1 Build and test
 1. Create a new project and activate console
 1. Create a new instance `gcloud sql instances create my-instance --availability-type regional --region europe-west3 --enable-bin-log --backup-start-time=03:00`
 1. Create a new DB `gcloud sql databases create <DB_NAME> --instance <INSTANCE_NAME>`
 1. Clone this repository `git clone https://github.com/janstarc/adMediation`
-1. Delete file **adMediation/src/main/resources/application.yml**
-1. Move to the project root, delete the *"local" pom.xml* `rm pom.xml`
+1. Move to the project root, delete file **application.yml** `rm src/main/resources/application.yml`
+1. Delete the *"local" pom.xml* `rm pom.xml`
 1. Activate the *"Google Cloud" pom.xml* `mv pom_gCloud.xml pom.xml`
 1. *Uncomment* the content of **adMediation/src/main/resources/application.properties**
 1. *Uncomment* the content of **adMediation/src/main/resources/application-mysql.properties**
@@ -32,33 +32,119 @@
 1. Run `gcloud app browse` to get the link
 
 ## 2. How to use?
-### 2.1 Update list of ad networks
-To update the list from batch processing send a PUT request with valid JSON file to `/data/deleteAndInsert`.
+### 2.1 Update list of ad networks (part of the API accessible only internally)
+To update the list from batch processing send a PUT request with valid JSON file to `/data`.
 
 See a sample JSON file in **resources/json/** folder with 60 objects for testing purposes.
 
-### 2.2 Retrieve list of ad networks
+Example of JSON file (which is assumed to be the result of a batch job):
+```json
+[
+  {
+    "idPerformanceData": 1,
+    "performanceScore": 15,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "idAdType": 1,
+      "descriptionType": "Banner"
+    },
+    "adProvider": {
+      "idAdProvider": 1,
+      "descriptionProvider": "Facebook"
+    }
+  },
+  {
+    "idPerformanceData": 2,
+    "performanceScore": 78,
+    "country": {
+      "countryCode": "SL",
+      "countryName": "Slovenia"
+    },
+    "adType": {
+      "idAdType": 2,
+      "descriptionType": "interstitial"
+    },
+    "adProvider": {
+      "idAdProvider": 1,
+      "descriptionProvider": "Facebook"
+    }
+  },
+...
+]
+
+```
+##### 2.1.1 Other supported methods (for testing purposes)
+`GET /data` returns JSON with all records in the DB.
+
+`DELETE /data` empties the performance_data table.
+
+
+---
+### 2.2 Retrieve list of ad networks (part of the API open to mobile apps)
 #### 2.2.1 Request
-To retrieve a list of ad networks for a certain country, send a **GET** request to `/performanceData/subset`.
+To retrieve a list of ad networks for a certain country, send a **GET** request to `/performanceData`.
 
 The GET request must have 5 parameters: 
 - **platform** *(In the test data, there are currently Android and iOS added)*
 - **osVersion**
 - **appName**
 - **appVersion**
-- **countryCode** *(In the test data, there are currently 5 countries: SL, DE, US, CN)*
+- **countryCode** *(In the test data, there are currently 4 countries: SL, DE, US, CN)*
 
 Example of a **GET** request: `/performanceData/subset?platform=Android&osVersion=10&appName=Talking Tom&appVersion=2.5&countryCode=SL`
 
-#### 2.2.2 Response
+#### 2.2.2 Response 
 A JSON object with an ordered list of ad networks for each ad type is returned.
 
-Example of a response: --> Popravi, da ne vrne drzave!
-`SE MANJKA`
+**Example of a response** - JSON file contains 3 arrays, each of them with data for a specific ad type:
+```json
+{
+    "adType1": [
+        {
+            "performanceScore": 83,
+            "adProviderId": 3
+        },
+        {
+            "performanceScore": 58,
+            "adProviderId": 2
+        },
+        ...
+    ],
+    "adType2": [
+        {
+            "performanceScore": 86,
+            "adProviderId": 2
+        },
+        {
+            "performanceScore": 58,
+            "adProviderId": 4
+        },
+        ...
+    ],
+    "adType3": [
+        {
+            "performanceScore": 69,
+            "adProviderId": 1
+        },
+        {
+            "performanceScore": 41,
+            "adProviderId": 2
+        },
+        ...
+    ]
+}
 
+```
+## 3. Other
 **Assumptions:** 
 - Performance scores are stored in the DB as numbers within interval [1, 100].
 - Higher performance score means better performance.
-- Smartphone apps only need **adProviderID** and **adTypeID** and **performanceScore** in order to identify and connect with the correct ad network 
+- Smartphone apps only needs **adProviderID** and **adTypeID** and **performanceScore** in order to identify and connect with the correct ad network 
 
+**To Do - For Production**
+- Unit tests need to be added
+- Access to `/data` needs to be granted to authorized users only
 

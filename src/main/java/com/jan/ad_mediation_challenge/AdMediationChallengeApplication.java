@@ -21,15 +21,9 @@ import java.io.InputStream;
 import java.util.List;
 
 @SpringBootApplication
-// @EnableJpaRepositories(repositoryFactoryBeanClass = DynamicJpaRepositoryFactoryBean.class)
 public class AdMediationChallengeApplication {
-
-
 
     public static void main(String[] args) {
         SpringApplication.run(AdMediationChallengeApplication.class, args);
     }
-
-
-
 }

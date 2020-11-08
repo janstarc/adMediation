@@ -18,22 +18,17 @@ public class UpdateDataController {
         this.updateService = updateService;
     }
 
-    @GetMapping("/list")
+    @GetMapping("")
     public Iterable<PerformanceData> list(){
         return updateService.list();
     }
 
-    @PutMapping("/update")
-    public int updatePerformanceData(@Valid @NotNull @RequestBody String newData){
-        return updateService.updatePerfData(newData);
-    }
-
-    @PutMapping("/deleteAndInsert")
+    @PutMapping("")
     public int deleteAndInsertPerfData(@Valid @NotNull @RequestBody String newData){
         return updateService.deleteAndInsertData(newData);
     }
 
-    @DeleteMapping("/deleteAllData")
+    @DeleteMapping("")
     public int deleteData(){
         return updateService.deleteData();
     }

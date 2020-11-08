@@ -22,7 +22,7 @@ public class PerformanceDataController {
     }
 
     // TODO To handlamo!
-
+    /*
     @GetMapping("")
     public List<PerformanceData> getPerformanceData(@RequestParam(value = "platform") String platform,
                                                     @RequestParam(value = "osVersion") String osVersion,
@@ -34,7 +34,9 @@ public class PerformanceDataController {
         return performanceDataService.getTest(platform, osVersion, appName, appVersion, countryCode, testNum);
         //return "Data sent = " + platform + osVersion + appName + appVersion + countryCode;
     }
+     */
 
+    /*
     @GetMapping("/subset")
     public List<PerformanceData> getPerformanceDataSubset(@RequestParam(value = "platform") String platform,
                                                                      @RequestParam(value = "osVersion") String osVersion,
@@ -45,8 +47,9 @@ public class PerformanceDataController {
 
          return performanceDataService.getTestSubset(platform, osVersion, appName, appVersion, countryCode);
     }
+     */
 
-    @GetMapping("/subset/rows")
+    @GetMapping("")
     public ResultList getPerformanceDataSubsetRows(@RequestParam(value = "platform") String platform,
                                                    @RequestParam(value = "osVersion") String osVersion,
                                                    @RequestParam(value = "appName") String appName,

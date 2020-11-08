@@ -35,6 +35,7 @@ public class PerformanceDataService {
     }
     */
 
+    /*
     // TODO
     Logger logger = LoggerFactory.getLogger(UpdateService.class);
 
@@ -60,6 +61,9 @@ public class PerformanceDataService {
 
     }
 
+     */
+
+    /*
     public List<PerformanceData> getTest(String platform, String osVersion, String appName, String appVersion, String countryCode, int testNum) {
 
         return performanceDataDao.findPerformanceDataByPerformanceScoreQueryDSL(testNum);
@@ -69,6 +73,8 @@ public class PerformanceDataService {
 
         return performanceDataDao.findSubset(platform, osVersion, appName, appVersion, countryCode);
     }
+
+     */
 
     public ResultList getTestSubsetRows(String platform, String osVersion, String appName, String appVersion, String countryCode) {
 
