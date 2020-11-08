@@ -80,7 +80,7 @@ public class PerformanceDataImpl implements PerformanceDataDao {
         List<Result> resultList = new ArrayList<>();
 
         for(PerformanceData pd : list){
-            resultList.add(new Result(pd.getPerformanceScore(), pd.getAdProvider().getIdAdProvider(), pd.getAdType().getIdAdType()));
+            resultList.add(new Result(pd.getPerformanceScore(), pd.getAdProvider().getIdAdProvider()));
         }
 
         return resultList;

@@ -4,12 +4,10 @@ public class Result {
 
     private int performanceScore;
     private int adProviderId;
-    private int adTypeId;
 
-    public Result(int performanceScore, int adProviderId, int adTypeId) {
+    public Result(int performanceScore, int adProviderId) {
         this.performanceScore = performanceScore;
         this.adProviderId = adProviderId;
-        this.adTypeId = adTypeId;
     }
 
     public int getPerformanceScore() {
@@ -26,13 +24,5 @@ public class Result {
 
     public void setAdProviderId(int adProviderId) {
         this.adProviderId = adProviderId;
-    }
-
-    public int getAdTypeId() {
-        return adTypeId;
-    }
-
-    public void setAdTypeId(int adTypeId) {
-        this.adTypeId = adTypeId;
     }
 }
