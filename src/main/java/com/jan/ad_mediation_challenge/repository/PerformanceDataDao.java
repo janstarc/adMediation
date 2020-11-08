@@ -6,9 +6,5 @@ import java.util.List;
 
 public interface PerformanceDataDao {
 
-    // public PerformanceData save(PerformanceData performanceData);
-
-    // public List<PerformanceData> findPerformanceDataByPerformanceScoreQueryDSL(int perfScore);
-    // public List<PerformanceData> findSubset(String platform, String osVersion, String appName, String appVersion, String countryCode);
     public ResultList findSubsetRows(String platform, String osVersion, String appName, String appVersion, String countryCode);
 }

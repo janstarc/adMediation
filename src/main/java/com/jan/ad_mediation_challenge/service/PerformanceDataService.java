@@ -17,7 +17,6 @@ public class PerformanceDataService {
 
     private SqlDAO sqlDAO;
     private PerformanceDataDao performanceDataDao;
-    //private PerformanceDataSubset performanceDataSubset;
 
 
     @Autowired
@@ -25,56 +24,6 @@ public class PerformanceDataService {
         this.sqlDAO = sqlDAO;
         this.performanceDataDao = performanceDataDao;
     }
-
-
-
-    /*
-    @Autowired
-    public PerformanceDataSubset(PerformanceDataSubset performanceDataSubset){
-        this.performanceDataSubset = performanceDataSubset;
-    }
-    */
-
-    /*
-    // TODO
-    Logger logger = LoggerFactory.getLogger(UpdateService.class);
-
-    public List<PerformanceData> getPerformanceData(String platform, String osVersion, String appName, String appVersion, String countryCode, int testNum) {
-        logger.info("################# " + countryCode);
-        return sqlDAO.findPerformanceDataByPerformanceScoreAndCountry_CountryCode(testNum, countryCode);
-    }
-
-    public List<PerformanceDataSubset> getPerformanceDataSubset(String platform, String osVersion, String appName, String appVersion, String countryCode, int testNum) {
-
-        if (platform.equals("Android") && osVersion.charAt(0) == '9' && countryCode.equals("CN")){
-            // Results without AdMob
-            return sqlDAO.findNoFacebookNoAdMobByCountry_CountryCode(countryCode);
-        } else if (countryCode.equals("CN")){
-            // Results without FB
-            return sqlDAO.findNoFacebookByCountry_CountryCode(countryCode);
-        } else if (platform.equals("Android") && osVersion.charAt(0) == '9'){
-            return sqlDAO.findNoAdmobByCountry_CountryCode(countryCode);
-        } else {
-            return sqlDAO.findByCountry_CountryCode(countryCode);
-        }
-
-
-    }
-
-     */
-
-    /*
-    public List<PerformanceData> getTest(String platform, String osVersion, String appName, String appVersion, String countryCode, int testNum) {
-
-        return performanceDataDao.findPerformanceDataByPerformanceScoreQueryDSL(testNum);
-    }
-
-    public List<PerformanceData> getTestSubset(String platform, String osVersion, String appName, String appVersion, String countryCode) {
-
-        return performanceDataDao.findSubset(platform, osVersion, appName, appVersion, countryCode);
-    }
-
-     */
 
     public ResultList getTestSubsetRows(String platform, String osVersion, String appName, String appVersion, String countryCode) {
 
