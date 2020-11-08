@@ -20,7 +20,7 @@
 1. Activate the *"Google Cloud" pom.xml* `mv pom_gCloud.xml pom.xml`
 1. *Uncomment* the content of **adMediation/src/main/resources/application.properties**
 1. *Uncomment* the content of **adMediation/src/main/resources/application-mysql.properties**
-1. Change `spring.cloud.gcp.sql.instance-connection-name` in **application-mysql.properties** to your **<CONNECTION_NAME>**
+1. Change the `spring.cloud.gcp.sql.instance-connection-name` parameter in **application-mysql.properties** to your **<CONNECTION_NAME>**
 1. Run `./mvnw spring-boot:run` and open the **Web Preview** (if there are issues with permissions, run `chmod +x mvnw`)
 
 #### 1.2.2 Deploy
