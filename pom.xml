@@ -92,6 +92,12 @@
             <artifactId>spring-dynamic-jpa</artifactId>
             <version>2.3.3</version>
         </dependency>
+        <!-- Freemarker, for dynamic queries -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.30</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -101,7 +107,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-        
+
     </build>
 
 </project>

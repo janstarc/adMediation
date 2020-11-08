@@ -9,14 +9,14 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.util.List;
 
-@EnableJpaRepositories(repositoryFactoryBeanClass = DynamicJpaRepositoryFactoryBean.class)
 public interface SqlDAO extends JpaRepository<PerformanceData, Long> {
+
 
 
     // TODO NOTE! When working with dynamic queries the number of parameters in the JPA query method name isn't irrelevant!
 
     @DynamicQuery(
-            value = "select p from PerformanceData p where p.performanceScore > :performanceScore \n" +
+            value = "select p from PerformanceData p where p.performanceScore = :performanceScore \n" +
                     "<#if countryCode?has_content> \n" +
                     " and p.country.countryCode = :countryCode \n" +
                     "</#if>"
@@ -33,12 +33,12 @@ public interface SqlDAO extends JpaRepository<PerformanceData, Long> {
     */
 
 
-
+    String krneki = "select p from PerformanceData p " +
+            "where p.country.countryCode = :countryCode " +
+            "order by p.adType.idAdType asc, p.performanceScore desc";
 
     @Query(
-            value = "select p from PerformanceData p " +
-                    "where p.country.countryCode = :countryCode " +
-                    "order by p.adType.idAdType asc, p.performanceScore desc"
+            value = krneki
     )
     List<PerformanceDataSubset> findByCountry_CountryCode(String countryCode);
 
