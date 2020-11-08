@@ -33,11 +33,11 @@
 
 ## 2. How to use?
 ### 2.1 Update list of ad networks (part of the API accessible only internally)
-To update the list from batch processing send a PUT request with valid JSON file to `/data`.
+To update the DB with the new data from batch processing send a PUT request with valid JSON file to `/data`.
 
-See a sample JSON file in **resources/json/** folder with 60 objects for testing purposes.
+See a sample JSON file in **resources/json/batchResults1.json** folder with 60 objects for testing purposes.
 
-Example of JSON file (which is assumed to be the result of a batch job):
+**Example of a valid JSON file** (which is assumed to be the result of a batch job):
 ```json
 [
   {
@@ -76,10 +76,10 @@ Example of JSON file (which is assumed to be the result of a batch job):
 ]
 
 ```
-##### 2.1.1 Other supported methods (for testing purposes)
+#### 2.1.1 Other supported methods (for testing purposes)
 `GET /data` returns JSON with all records in the DB.
 
-`DELETE /data` empties the performance_data table.
+`DELETE /data` deletes **all** records from the performance_data table.
 
 
 ---
@@ -94,12 +94,16 @@ The GET request must have 5 parameters:
 - **appVersion**
 - **countryCode** *(In the test data, there are currently 4 countries: SL, DE, US, CN)*
 
-Example of a **GET** request: `/performanceData/subset?platform=Android&osVersion=10&appName=Talking Tom&appVersion=2.5&countryCode=SL`
+Example of a **GET** request: `/performanceData?platform=Android&osVersion=10&appName=Talking Tom&appVersion=2.5&countryCode=SL`
 
 #### 2.2.2 Response 
-A JSON object with an ordered list of ad networks for each ad type is returned.
+A JSON object with an ordered list of ad networks for each ad type is returned as a result.
 
-**Example of a response** - JSON file contains 3 arrays, each of them with data for a specific ad type:
+JSON result contains 3 arrays, each of them with data for a specific ad type. It is firstly sorted by **adType**, additionally **adType** arrays are sorted by **performanceScore** in descending order (it is assumed that higer performanceScore means better performance).
+
+The response is **simple** and **easy to read**.
+
+**Example:**
 ```json
 {
     "adType1": [
