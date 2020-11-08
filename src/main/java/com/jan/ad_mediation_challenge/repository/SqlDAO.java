@@ -9,12 +9,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.util.List;
 
-@EnableJpaRepositories(repositoryFactoryBeanClass = DynamicJpaRepositoryFactoryBean.class)
+//@EnableJpaRepositories(repositoryFactoryBeanClass = DynamicJpaRepositoryFactoryBean.class)
 public interface SqlDAO extends JpaRepository<PerformanceData, Long> {
 
 
-    // TODO NOTE! When working with dynamic queries the number of parameters in the JPA query method name isn't irrelevant!
 
+    // TODO NOTE! When working with dynamic queries the number of parameters in the JPA query method name isn't irrelevant!
+    /*
     @DynamicQuery(
             value = "select p from PerformanceData p where p.performanceScore > :performanceScore \n" +
                     "<#if countryCode?has_content> \n" +
@@ -23,7 +24,9 @@ public interface SqlDAO extends JpaRepository<PerformanceData, Long> {
     )
     List<PerformanceData> findPerformanceDataByPerformanceScoreAndCountry_CountryCode(int performanceScore, String countryCode);
 
-    //List<PerformanceData> findPerformanceDataByPerformanceScoreAndCountry_CountryCode(int performanceScore, String countryCode);
+
+     */
+    List<PerformanceData> findPerformanceDataByPerformanceScoreAndCountry_CountryCode(int performanceScore, String countryCode);
 
     /*
     @Query(
@@ -31,9 +34,6 @@ public interface SqlDAO extends JpaRepository<PerformanceData, Long> {
     )
     List<PerformanceData> findByPerformanceScore(int testNum);
     */
-
-
-
 
     @Query(
             value = "select p from PerformanceData p " +
@@ -48,7 +48,7 @@ public interface SqlDAO extends JpaRepository<PerformanceData, Long> {
                     "and p.adProvider.descriptionProvider <> 'AdMob' " +
                     "order by p.adType.idAdType asc, p.performanceScore desc"
     )
-    List<PerformanceDataSubset> findByCountry_CountryCodeNoAdmob(String countryCode);
+    List<PerformanceDataSubset> findNoAdmobByCountry_CountryCode(String countryCode);
 
     @Query(
             value = "select p from PerformanceData p " +
@@ -56,7 +56,22 @@ public interface SqlDAO extends JpaRepository<PerformanceData, Long> {
                     "and p.adProvider.descriptionProvider <> 'Facebook' " +
                     "order by p.adType.idAdType asc, p.performanceScore desc"
     )
-    List<PerformanceDataSubset> findByCountry_CountryCodeNoFacebook(String countryCode);
+    List<PerformanceDataSubset> findNoFacebookByCountry_CountryCode(String countryCode);
+
+    @Query(
+            value = "select p from PerformanceData p " +
+                    "where p.country.countryCode = :countryCode " +
+                    "and p.adProvider.descriptionProvider <> 'Facebook' " +
+                    "and p.adProvider.descriptionProvider <> 'AdMob' " +
+                    "order by p.adType.idAdType asc, p.performanceScore desc"
+    )
+    List<PerformanceDataSubset> findNoFacebookNoAdMobByCountry_CountryCode(String countryCode);
+
+    String test = "test";
+    @Query(
+            value = test
+    )
+    List<PerformanceDataSubset> findTestByCountry_CountryCodeNoFacebook(String countryCode);
 
 
 }

@@ -39,16 +39,19 @@ public class PerformanceDataService {
 
     public List<PerformanceDataSubset> getPerformanceDataSubset(String platform, String osVersion, String appName, String appVersion, String countryCode, int testNum) {
 
-        if (platform.equals("Android") && osVersion.charAt(0) == '9'){
+        if (platform.equals("Android") && osVersion.charAt(0) == '9' && countryCode.equals("CN")){
             // Results without AdMob
-            return sqlDAO.findByCountry_CountryCodeNoAdmob(countryCode);
+            return sqlDAO.findNoFacebookNoAdMobByCountry_CountryCode(countryCode);
         } else if (countryCode.equals("CN")){
             // Results without FB
-            return sqlDAO.findByCountry_CountryCodeNoFacebook(countryCode);
+            return sqlDAO.findNoFacebookByCountry_CountryCode(countryCode);
+        } else if (platform.equals("Android") && osVersion.charAt(0) == '9'){
+            return sqlDAO.findNoAdmobByCountry_CountryCode(countryCode);
+        } else {
+            return sqlDAO.findByCountry_CountryCode(countryCode);
         }
-        // TODO Can query be a variable?
 
-        return sqlDAO.findByCountry_CountryCode(countryCode);
+
     }
 
 
