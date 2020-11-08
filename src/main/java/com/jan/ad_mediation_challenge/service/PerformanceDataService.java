@@ -1,10 +1,7 @@
 package com.jan.ad_mediation_challenge.service;
 
 import com.jan.ad_mediation_challenge.domain.PerformanceData;
-import com.jan.ad_mediation_challenge.repository.PerformanceDataDao;
-import com.jan.ad_mediation_challenge.repository.PerformanceDataImpl;
-import com.jan.ad_mediation_challenge.repository.PerformanceDataSubset;
-import com.jan.ad_mediation_challenge.repository.SqlDAO;
+import com.jan.ad_mediation_challenge.repository.*;
 import com.querydsl.jpa.impl.JPAQuery;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -71,6 +68,11 @@ public class PerformanceDataService {
     public List<PerformanceData> getTestSubset(String platform, String osVersion, String appName, String appVersion, String countryCode) {
 
         return performanceDataDao.findSubset(platform, osVersion, appName, appVersion, countryCode);
+    }
+
+    public List<Result> getTestSubsetRows(String platform, String osVersion, String appName, String appVersion, String countryCode) {
+
+        return performanceDataDao.findSubsetRows(platform, osVersion, appName, appVersion, countryCode);
     }
 
 

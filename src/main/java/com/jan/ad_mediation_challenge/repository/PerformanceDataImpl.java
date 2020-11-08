@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.ArrayList;
 import java.util.List;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
@@ -71,12 +72,46 @@ public class PerformanceDataImpl implements PerformanceDataDao {
 
         //List<Object[]> rows = query.list(performanceData.performanceScore, performanceData.adType.idAdType, performanceData.adProvider.descriptionProvider);
 
-
-
         //return query.fetch();
         return query.fetch();
     }
 
+    public List<Result> convertList(List<PerformanceData> list){
+        List<Result> resultList = new ArrayList<>();
+
+        for(PerformanceData pd : list){
+            resultList.add(new Result(pd.getPerformanceScore(), pd.getAdProvider().getIdAdProvider(), pd.getAdType().getIdAdType()));
+        }
+
+        return resultList;
+    }
 
 
+    public List<Result> findSubsetRows(String platform, String osVersion, String appName, String appVersion, String countryCode){
+
+        final JPAQuery<PerformanceData> query = new JPAQuery<>(em);
+        final QPerformanceData performanceData = QPerformanceData.performanceData;
+
+        query.from(performanceData);
+        query.where(performanceData.country.countryCode.equalsIgnoreCase(countryCode));
+        if(platform.equals("Android") && osVersion.charAt(0) == '9'){
+            query.where(performanceData.adProvider.descriptionProvider.notEqualsIgnoreCase("AdMob").and(performanceData.adProvider.descriptionProvider.notEqualsIgnoreCase("AdMob-OptOut")));
+        }
+        if(countryCode.equals("CN")){
+            query.where(performanceData.adProvider.descriptionProvider.notEqualsIgnoreCase("Facebook"));
+        }
+        if(isAdMobPresent(countryCode)){
+            query.where(performanceData.adProvider.descriptionProvider.notEqualsIgnoreCase("AdMob-OptOut"));
+        }
+
+        query.orderBy(performanceData.adType.idAdType.asc());
+        query.orderBy(performanceData.performanceScore.desc());
+
+        //List<Object[]> rows = query.list(performanceData.performanceScore, performanceData.adType.idAdType, performanceData.adProvider.descriptionProvider);
+
+        //return query.fetch();
+        List<PerformanceData> fullResult = query.fetch();
+
+        return convertList(fullResult);
+    }
 }
