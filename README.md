@@ -12,7 +12,7 @@
 ### Option 2: Deploy to Google Cloud
 #### 1.2.1 Build and test
 1. Create a new project and activate console
-1. Create a new instance `gcloud sql instances create my-instance --availability-type regional --region europe-west3 --enable-bin-log --backup-start-time=03:00`
+1. Create a new instance `gcloud sql instances create <INSTANCE_NAME> --availability-type regional --region europe-west3 --enable-bin-log --backup-start-time=03:00`
 1. Create a new DB `gcloud sql databases create <DB_NAME> --instance <INSTANCE_NAME>`
 1. Clone this repository `git clone https://github.com/janstarc/adMediation`
 1. Move to the project root, delete file **application.yml** `rm src/main/resources/application.yml`
@@ -20,7 +20,7 @@
 1. Activate the *"Google Cloud" pom.xml* `mv pom_gCloud.xml pom.xml`
 1. *Uncomment* the content of **adMediation/src/main/resources/application.properties**
 1. *Uncomment* the content of **adMediation/src/main/resources/application-mysql.properties**
-1. Change `spring.cloud.gcp.sql.instance-connection-name` in **application-mysql.properties** to your <CONNECTION_NAME>
+1. Change `spring.cloud.gcp.sql.instance-connection-name` in **application-mysql.properties** to your **<CONNECTION_NAME>**
 1. Run `./mvnw spring-boot:run` and open the **Web Preview** (if there are issues with permissions, run `chmod +x mvnw`)
 
 #### 1.2.2 Deploy
@@ -32,7 +32,7 @@
 1. Run `gcloud app browse` to get the link
 
 ## 2. How to use?
-### 2.1 Update list of ad networks (part of the API accessible only internally)
+### TASK 1: Update list of ad networks (part of the API accessible only internally)
 To update the DB with the new data from batch processing send a PUT request with valid JSON file to `/data`.
 
 See a sample JSON file in **resources/json/batchResults1.json** folder with 60 objects for testing purposes.
@@ -76,15 +76,15 @@ See a sample JSON file in **resources/json/batchResults1.json** folder with 60 o
 ]
 
 ```
-#### 2.1.1 Other supported methods (for testing purposes)
+#### Other supported methods (for testing purposes)
 `GET /data` returns JSON with all records in the DB.
 
 `DELETE /data` deletes **all** records from the performance_data table.
 
 
 ---
-### 2.2 Retrieve list of ad networks (part of the API open to mobile apps)
-#### 2.2.1 Request
+### TASK 2: Retrieve list of ad networks (part of the API open to mobile apps)
+#### Request
 To retrieve a list of ad networks for a certain country, send a **GET** request to `/performanceData`.
 
 The GET request must have 5 parameters: 
@@ -96,7 +96,9 @@ The GET request must have 5 parameters:
 
 Example of a **GET** request: `/performanceData?platform=Android&osVersion=10&appName=Talking Tom&appVersion=2.5&countryCode=SL`
 
-#### 2.2.2 Response 
+*Note: GET requests return an error in some programs API development programs (e.g. Postman) if authentication is not configured properly. In such cases configure authentication OR simply use your web browser*
+
+#### Response 
 A JSON object with an ordered list of ad networks for each ad type is returned as a result.
 
 JSON result contains 3 arrays, each of them with data for a specific ad type. It is firstly sorted by **adType**, additionally **adType** arrays are sorted by **performanceScore** in descending order (it is assumed that higer performanceScore means better performance).
