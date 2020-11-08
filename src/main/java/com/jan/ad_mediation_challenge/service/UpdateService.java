@@ -7,7 +7,9 @@ import com.jan.ad_mediation_challenge.repository.SqlDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.io.IOException;
 import java.util.List;
@@ -24,11 +26,14 @@ public class UpdateService  {
     }
 
     public Iterable<PerformanceData> list(){
-        return sqlDAO.findAll();
+        try{
+            return sqlDAO.findAll();
+        } catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     // Save methods - for one and for list of perfData
-
     public PerformanceData save(PerformanceData perfData){
         return sqlDAO.save(perfData);
     }
@@ -36,51 +41,34 @@ public class UpdateService  {
 
 
     public void save(List<PerformanceData> perfDataAll) {
-        sqlDAO.saveAll(perfDataAll);
-    }
-
-    public int updatePerfData(String updatedData){
-
-        logger.info("AAAA: " + updatedData);
-
-        // read JSON and load json
-        ObjectMapper mapper = new ObjectMapper();
-        TypeReference<List<PerformanceData>> typeReference = new TypeReference<List<PerformanceData>>(){};
-
-        try {
-            List<PerformanceData> updates = mapper.readValue(updatedData, typeReference);
-            logger.info("Perf score: " + String.valueOf(updates.get(2).getPerformanceScore()));
-            save(updates);
-            System.out.println("Data updated!");
-        } catch (IOException e){
-            System.out.println("Unable to save users: " + e.getMessage());
+        try{
+            sqlDAO.saveAll(perfDataAll);
+        } catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
-        return 1;
     }
 
-    public int deleteAndInsertData(String newData){
+    public void deleteAndInsertData(String newData){
 
         ObjectMapper mapper = new ObjectMapper();
         TypeReference<List<PerformanceData>> typeReference = new TypeReference<List<PerformanceData>>(){};
 
         try {
             List<PerformanceData> updates = mapper.readValue(newData, typeReference);
-            logger.info("Perf score: " + String.valueOf(updates.get(2).getPerformanceScore()));
             sqlDAO.deleteAllInBatch();
             save(updates);
             System.out.println("Data Saved!");
         } catch (IOException e){
             System.out.println("Unable to save data: " + e.getMessage());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
-
-        return 1;
     }
 
-    public int deleteData(){
-        sqlDAO.deleteAllInBatch();
-        return 1;
+    public void deleteData(){
+        try{
+            sqlDAO.deleteAllInBatch();
+        } catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
-
-
 }

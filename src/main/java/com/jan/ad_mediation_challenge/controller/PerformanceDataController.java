@@ -16,13 +16,13 @@ public class PerformanceDataController {
         this.performanceDataService = performanceDataService;
     }
 
+    // Request from smartphone app...
     @GetMapping("")
     public ResultList getPerformanceDataSubsetRows(@RequestParam(value = "platform") String platform,
                                                    @RequestParam(value = "osVersion") String osVersion,
                                                    @RequestParam(value = "appName") String appName,
                                                    @RequestParam(value = "appVersion") String appVersion,
-                                                   @RequestParam(value = "countryCode") String countryCode
-                                                          ){
+                                                   @RequestParam(value = "countryCode") String countryCode){
 
         return performanceDataService.getTestSubsetRows(platform, osVersion, appName, appVersion, countryCode);
     }

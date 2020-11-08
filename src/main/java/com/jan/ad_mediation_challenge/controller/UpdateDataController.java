@@ -24,12 +24,12 @@ public class UpdateDataController {
     }
 
     @PutMapping("")
-    public int deleteAndInsertPerfData(@Valid @NotNull @RequestBody String newData){
-        return updateService.deleteAndInsertData(newData);
+    public void deleteAndInsertPerfData(@Valid @NotNull @RequestBody String newData){
+        updateService.deleteAndInsertData(newData);
     }
 
     @DeleteMapping("")
-    public int deleteData(){
-        return updateService.deleteData();
+    public void deleteData(){
+        updateService.deleteData();
     }
 }
