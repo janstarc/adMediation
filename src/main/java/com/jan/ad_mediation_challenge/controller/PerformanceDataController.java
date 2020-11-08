@@ -3,6 +3,7 @@ package com.jan.ad_mediation_challenge.controller;
 import com.jan.ad_mediation_challenge.domain.PerformanceData;
 import com.jan.ad_mediation_challenge.repository.PerformanceDataSubset;
 import com.jan.ad_mediation_challenge.repository.Result;
+import com.jan.ad_mediation_challenge.repository.ResultList;
 import com.jan.ad_mediation_challenge.service.PerformanceDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -46,11 +47,11 @@ public class PerformanceDataController {
     }
 
     @GetMapping("/subset/rows")
-    public List<Result> getPerformanceDataSubsetRows(@RequestParam(value = "platform") String platform,
-                                                     @RequestParam(value = "osVersion") String osVersion,
-                                                     @RequestParam(value = "appName") String appName,
-                                                     @RequestParam(value = "appVersion") String appVersion,
-                                                     @RequestParam(value = "countryCode") String countryCode
+    public ResultList getPerformanceDataSubsetRows(@RequestParam(value = "platform") String platform,
+                                                   @RequestParam(value = "osVersion") String osVersion,
+                                                   @RequestParam(value = "appName") String appName,
+                                                   @RequestParam(value = "appVersion") String appVersion,
+                                                   @RequestParam(value = "countryCode") String countryCode
                                                           ){
 
         return performanceDataService.getTestSubsetRows(platform, osVersion, appName, appVersion, countryCode);

@@ -87,7 +87,7 @@ public class PerformanceDataImpl implements PerformanceDataDao {
     }
 
 
-    public List<Result> findSubsetRows(String platform, String osVersion, String appName, String appVersion, String countryCode){
+    public ResultList findSubsetRows(String platform, String osVersion, String appName, String appVersion, String countryCode){
 
         final JPAQuery<PerformanceData> query = new JPAQuery<>(em);
         final QPerformanceData performanceData = QPerformanceData.performanceData;
@@ -104,14 +104,23 @@ public class PerformanceDataImpl implements PerformanceDataDao {
             query.where(performanceData.adProvider.descriptionProvider.notEqualsIgnoreCase("AdMob-OptOut"));
         }
 
-        query.orderBy(performanceData.adType.idAdType.asc());
-        query.orderBy(performanceData.performanceScore.desc());
+        final JPAQuery<PerformanceData> q1 = query.clone(em);
+        final JPAQuery<PerformanceData> q2 = query.clone(em);
+        final JPAQuery<PerformanceData> q3 = query.clone(em);
+
+        //query.orderBy(performanceData.adType.idAdType.asc());
+        List<Result> adType1_List = convertList(q1.where(performanceData.adType.idAdType.eq(1)).orderBy(performanceData.performanceScore.desc()).fetch());
+        List<Result> adType2_List = convertList(q2.where(performanceData.adType.idAdType.eq(2)).orderBy(performanceData.performanceScore.desc()).fetch());
+        List<Result> adType3_List = convertList(q3.where(performanceData.adType.idAdType.eq(3)).orderBy(performanceData.performanceScore.desc()).fetch());
+
+
+        //query.orderBy(performanceData.performanceScore.desc());
 
         //List<Object[]> rows = query.list(performanceData.performanceScore, performanceData.adType.idAdType, performanceData.adProvider.descriptionProvider);
 
         //return query.fetch();
-        List<PerformanceData> fullResult = query.fetch();
+        //List<PerformanceData> fullResult = query.fetch();
 
-        return convertList(fullResult);
+        return new ResultList(adType1_List, adType2_List, adType3_List);
     }
 }

@@ -70,7 +70,7 @@ public class PerformanceDataService {
         return performanceDataDao.findSubset(platform, osVersion, appName, appVersion, countryCode);
     }
 
-    public List<Result> getTestSubsetRows(String platform, String osVersion, String appName, String appVersion, String countryCode) {
+    public ResultList getTestSubsetRows(String platform, String osVersion, String appName, String appVersion, String countryCode) {
 
         return performanceDataDao.findSubsetRows(platform, osVersion, appName, appVersion, countryCode);
     }
